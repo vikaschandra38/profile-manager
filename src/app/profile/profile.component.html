@@ -1,0 +1,11 @@
+<mat-card class="mat-elevation-z8">
+  <mat-card-content>
+    <h2>{{ profile.firstName }} {{ profile.lastName }}</h2>
+    <p>{{ profile.phone }}</p>
+    <p>{{ profile.email }}</p>
+  </mat-card-content>
+  <mat-card-actions [align]="'end'">
+    <button mat-button (click)="deleteProfile()">DELETE</button>
+    <button mat-button (click)="editProfile()">EDIT</button>
+  </mat-card-actions>
+</mat-card>

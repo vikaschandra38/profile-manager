@@ -1,0 +1,14 @@
+<div class="add-btn">
+  <button (click)="addProfile()" mat-fab color="primary" aria-label="add icon">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+<div class="profile-list">
+  @for (profile of profiles; track profile.id) {
+  <app-profile
+    [profile]="profile"
+    (deleteProfileAction)="deleteProfile($event)"
+    (editProfileAction)="editProfile($event)"
+  />
+  }
+</div>

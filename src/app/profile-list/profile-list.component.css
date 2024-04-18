@@ -1,0 +1,12 @@
+.profile-list {
+  margin: 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.add-btn {
+  margin: 1rem;
+  display: flex;
+  justify-content: end;
+}

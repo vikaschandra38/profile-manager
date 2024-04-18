@@ -1,0 +1,48 @@
+<form class="profile-form" [formGroup]="profileForm">
+  <mat-dialog-content>
+    <mat-form-field>
+      <mat-label>First name</mat-label>
+      <input matInput required formControlName="firstName" />
+      @if (firstName?.hasError('required')) {
+      <mat-error>Name is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Last name</mat-label>
+      <input matInput required formControlName="lastName" />
+      @if (lastName?.hasError('required')) {
+      <mat-error>Name is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Telephone</mat-label>
+      <input
+        formControlName="phone"
+        type="tel"
+        matInput
+        placeholder="555-555-1234"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        formControlName="email"
+        placeholder="Ex. pat@example.com"
+      />
+      @if (email?.hasError('email') && !email?.hasError('required')) {
+      <mat-error>Please enter a valid email address</mat-error>
+      } @if (email?.hasError('required')) {
+      <mat-error>Email is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions [align]="'end'">
+    <button mat-button (click)="onNoClick()">CANCEL</button>
+    <button mat-button [mat-dialog-close]="profileForm.value" cdkFocusInitial>SAVE</button>
+  </mat-dialog-actions>
+</form>
